@@ -1,0 +1,10 @@
+1. Build the Docker Image using docker build -t docker-flask:latest .
+2. Running the application in debug mode usig the command:
+docker run --name flaskapp -v$PWD/app:/app -p5000:5000 docker-flask:latest
+3. This does the following:
+    Starts a container based on the docker-flask image we built previously.
+    This container's name is set to flaskapp. Without the --name option, Docker chooses an arbitrary
+    name for the container. Specifying a name explicitly will help us in locating the container (for stopping etc.,.)
+    The -v option mounts the app folder on the host to the container.
+    The -p option maps the port on the container to the host.
+    Now the application can be accessed at http://localhost:5000 or http://0.0.0.0:5000/:
